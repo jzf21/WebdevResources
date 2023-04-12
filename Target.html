@@ -1,114 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+    </head>
+    <style>
+        html{
+            cursor: crosshair;
+            user-select: none;
+        }
     
-</head>
-<style>
-    html{
-        cursor: crosshair;
-    }
-  
-    .block{
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: brown;
-        border-radius: 50%;
-        left: 300;
-        top: 500;
-        background-image: url("https://i.pinimg.com/originals/5d/48/dd/5d48dd86c2d10aa52c35eda4382e8dec.jpg");
-        /* background-position: cover; */
-        background-size: cover;
-    }
-    .block:hover{
-        cursor: crosshair;
-    }
-    /* .block:focus{
-        border: none;
-        outline: none;
-        background-color: transparent;
+        .block{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            border-radius: 50%;
+            left: 300;
+            top: 500;
+            background-image: url("https://i.pinimg.com/originals/5d/48/dd/5d48dd86c2d10aa52c35eda4382e8dec.jpg");
+            /* background-position: cover; */
+            background-size: cover;
+        }
+        .block:hover{
+            cursor: crosshair;
+        }
+        /* .block:focus{
+            border: none;
+            outline: none;
+            background-color: transparent;
 
-    } */
-    body{
-        cursor: crosshair;
+        } */
+        body{
+            cursor: crosshair;
 
-    }
-    .pos1{
-        top: 305px;
-        left: 450px;
-    }
-    .pos2{
-        top: 95px;
-        left: 560px;
-    }
-    .pos3{
-        top: 15px;
-        left: 400px;
-    }
-    .pos4{
-        top: 45px;
-        left: 1000px;
-    }
-    .flex{
-        display: flex;
-        flex-direction: row;
-        gap:300px;
-        justify-content: center;
-    }
-    
-    .reset{
-        position: absolute;
-        top:500;
-    }
+        }
+        .pos1{
+            top: 305px;
+            left: 450px;
+        }
+        .pos2{
+            top: 95px;
+            left: 560px;
+        }
+        .pos3{
+            top: 15px;
+            left: 400px;
+        }
+        .pos4{
+            top: 45px;
+            left: 1000px;
+        }
+        .flex{
+            display: flex;
+            flex-direction: row;
+            gap:300px;
+            justify-content: center;
+        }
+        
+        .reset{
+            position: absolute;
+            top:500;
+        }
 
-</style>
-<body>
-    <!-- <button class="block pos1"></button>
-    <button class="block pos2"></button>
-    <button class="block pos3"></button>
-    <button class="block pos4"></button> -->
-    <p>Click me to Start</p>
-    <button onclick="onClick()" id="btn" class="block "></button>
-   <div class="flex">
-    <h2 class="" id="timer"></h1>
-    <h1 class="score" id="score"></h1>
-   </div>
-   <button class="reset" id="reset" onclick="reset()" >Reset</button>
-</body>
-<script>
-    function reset(){
-        timer(30);
-        global=1;
-    }
-    var global = 1;
-    let timeElm = document.getElementById('timer');
-let timer = function(x) {
- if(x === 0) {
-    timeElm.innerHTML = "Game Over. Score:"+global;
-    document.getElementById("reset").disabled =false;
-    global=0;
-    document.getElementById("score").innerText=global;
-    return;
- }
- document.getElementById("reset").disabled = true;
- timeElm.innerHTML = x;
-
- return setTimeout(() => {timer(--x)}, 1000)
-}
-
-timer(30);
-    
-    function onClick(){
+    </style>
+    <body>
+        <!-- <button class="block pos1"></button>
+        <button class="block pos2"></button>
+        <button class="block pos3"></button>
+        <button class="block pos4"></button> -->
+        <p>Click me to Start</p>
+        <button onclick="onClick()" id="btn" class="block "></button>
+    <div class="flex">
+        <h2 class="" id="timer"></h1>
+        <h1 class="score" id="score"></h1>
+    </div>
+    <button class="reset" id="reset" onclick="reset()" >Reset</button>
+    </body>
+    <script>
+        function reset(){
+            timer(30);
+            global=1;
+        }
+        var global = 1;
+        let timeElm = document.getElementById('timer');
+    let timer = function(x) {
+    if(x === 0) {
+        timeElm.innerHTML = "Game Over. Score:"+global;
+        document.getElementById("reset").disabled =false;
+        global=0;
         document.getElementById("score").innerText=global;
-        var btn = document.getElementById("btn");
-        btn.style.top = Math.floor((Math.random() * 300) + 100) + "px";
-        btn.style.left = Math.floor((Math.random() * 1000) + 200) + "px";
-        global++;
+        return;
     }
-   
-</script>
-</html>
+    document.getElementById("reset").disabled = true;
+    timeElm.innerHTML = x;
+
+    return setTimeout(() => {timer(--x)}, 1000)
+    }
+
+    
+        
+
+        function onClick(){
+            if(global===1){
+                timer(30);
+            }
+            document.getElementById("score").innerText=global;
+            var btn = document.getElementById("btn");
+            btn.style.top = Math.floor((Math.random() * 300) + 100) + "px";
+            btn.style.left = Math.floor((Math.random() * 1000) + 200) + "px";
+            global++;
+        }
+    
+    </script>
+    </html>
