@@ -20,6 +20,9 @@
         border-radius: 50%;
         left: 300;
         top: 500;
+        background-image: url("https://i.pinimg.com/originals/5d/48/dd/5d48dd86c2d10aa52c35eda4382e8dec.jpg");
+        /* background-position: cover; */
+        background-size: cover;
     }
     .block:hover{
         cursor: crosshair;
@@ -68,12 +71,13 @@
     <button class="block pos2"></button>
     <button class="block pos3"></button>
     <button class="block pos4"></button> -->
+    <p>Click me to Start</p>
     <button onclick="onClick()" id="btn" class="block "></button>
    <div class="flex">
     <h2 class="" id="timer"></h1>
     <h1 class="score" id="score"></h1>
    </div>
-   <button class="reset" onclick="reset()" >Reset</button>
+   <button class="reset" id="reset" onclick="reset()" >Reset</button>
 </body>
 <script>
     function reset(){
@@ -85,10 +89,12 @@
 let timer = function(x) {
  if(x === 0) {
     timeElm.innerHTML = "Game Over. Score:"+global;
+    document.getElementById("reset").disabled =false;
     global=0;
+    document.getElementById("score").innerText=global;
     return;
  }
-
+ document.getElementById("reset").disabled = true;
  timeElm.innerHTML = x;
 
  return setTimeout(() => {timer(--x)}, 1000)
