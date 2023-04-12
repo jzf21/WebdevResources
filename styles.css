@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+body{
+    background-color: #e8e0f6;
+    margin: 80px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.3px;
+    font-weight: 200
+
+}
+h1{
+    font-weight: 500;
+}
+p{
+    font-weight: 200;
+
+}
+.questions{
+    font-weight: 400;
+}
+.flexbox-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+
+}
+
+.form-block{
+    width: 80%;
+    height: auto;
+    font-weight: 200;
+    background-color: rgb(255, 255, 255);
+    padding:10px 40px 20px 40px;
+    border-radius: 10px;
+
+}
+.block-top{
+    border-top: 10px rgb(103, 58, 183) solid;
+}
+
+.inputbox{
+    
+    border: none;
+    font-size: 20px;
+    width: 80%;
+    font-weight: 200px;
+    background: transparent;
+    color: rgb(87, 87, 87);
+    border-bottom: 1px solid gainsboro;
+
+
+
+}
+.block-left{
+    border-left: rgb(158, 158, 210) 10px solid;
+}
+.button-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+button{
+  
+    
+    padding:10px 20px 10px 20px ;
+    background-color: rgb(119, 8, 223);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    justify-content: flex-start;
+    transition: all 0.4s ease-in;
+}
+button:hover{
+    background-color: rgb(166, 83, 243);
+    cursor: pointer;
+}
+.fixed-height{
+    height: 200px;
+    background-image: url("https://img.freepik.com/free-vector/hand-drawn-collage-design_23-2149543516.jpg?w=740&t=st=1681278595~exp=1681279195~hmac=9eecaa0ecac1dc83be78f33deb132d53e57f2546f6ac43da19da602c7e494f2e");
+    background-size: cover;
+    background-position: center;
+}
+.fixed-height img{
+    height: 200px;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid rgb(24, 24, 24);
+    ;
+}
+button:focus{
+    background-color: rgb(150, 150, 165);
+    cursor: crosshair;
+}
